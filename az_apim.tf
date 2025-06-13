@@ -63,4 +63,10 @@ resource "azurerm_api_management_api" "github_v1" {
     name = "Support"
     url = "https://support.github.com/contact?tags=dotcom-rest-api"
   }
+
+  lifecycle {
+    ignore_changes = [
+      import
+    ]
+  }
 }
