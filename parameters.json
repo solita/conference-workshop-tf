@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": { "value": "westeurope" },
+    "resourceGroupName": { "value": "rg-hannes-001" },
+    "apimConfig": {
+        "value": {
+            "name": "apim-hannes-001",
+            "publisherName": "Hannes Van De Vreken",
+            "publisherEmail": "hannes.vandevreken@solita.fi",
+            "sku": "Developer"
+        }
+    },
+    "httpbinConfig": {
+        "value": {
+            "name": "HttpBin",
+            "oas": "https://raw.githubusercontent.com/Kong/swagger-ui-kong-theme/refs/heads/main/demo/public/specs/httpbin.yaml",
+            "serviceUrl": "http://httpbin.org"
+        }
+    },
+    "ordersApiConfig": {
+        "value": {
+            "name": "orders_api",
+            "path": "orders"
+        }
+    },
+    "tags": { "value": {
+        "Owner": "hannes.vandevreken@solita.fi",
+        "DueDate": "2025-06-19"
+    } }
+  }
+}

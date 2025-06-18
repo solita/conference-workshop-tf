@@ -1,0 +1,65 @@
+openapi: 3.0.3
+info:
+  title: Orders API
+  version: 1.1.0
+paths:
+  /orders:
+    get:
+      deprecated: true
+      summary: Retrieve a list of orders
+      responses:
+        '200':
+          description: A JSON array of orders
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1234
+                        amount:
+                          type: number
+                          example: 499.99
+                        currency:
+                          type: string
+                          example: "EUR"
+                        created_at:
+                          type: string
+                          example: "2025-01-01T00:00:00"
+  /fulfilled_orders:
+    get:
+      summary: Retrieve a list of fulfilled orders
+      responses:
+        '200':
+          description: A JSON array of fulfilled orders
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                          example: 1234
+                        amount:
+                          type: number
+                          example: 499.99
+                        currency:
+                          type: string
+                          example: "EUR"
+                        delivered_at:
+                          type: string
+                          example: "2025-01-01T00:00:00"
+                        created_at:
+                          type: string
+                          example: "2025-01-01T00:00:00"
